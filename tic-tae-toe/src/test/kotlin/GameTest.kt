@@ -5,7 +5,12 @@ internal class GameTest {
     private val testGame: Game = Game()
 
     @Test
-    fun testGameAttributesType() {
+    fun testGameBoardAttributeType() {
         assertTrue(testGame.board is String)
+    }
+
+    @Test
+    fun testGameBoardAttributeLength() {
+        assertEquals(testGame.board.length, 9)
     }
 }
