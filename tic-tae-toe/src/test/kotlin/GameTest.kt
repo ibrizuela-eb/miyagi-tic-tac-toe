@@ -13,4 +13,13 @@ internal class GameTest {
     fun testGameBoardAttributeLength() {
         assertEquals(testGame.board.length, 9)
     }
+
+    @Test
+    fun testRaffleTeamForPlayers() {
+        val playerOneName: String = "foo"
+        val playerTwoName: String = "bar"
+        val teamRaffled = testGame.raffleTeamForPlayers(playerOneName, playerTwoName)
+        assertEquals(teamRaffled["X"], playerOneName)
+        assertEquals(teamRaffled["O"], playerTwoName)
+    }
 }
