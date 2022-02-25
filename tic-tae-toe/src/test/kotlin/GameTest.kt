@@ -15,6 +15,11 @@ internal class GameTest {
     }
 
     @Test
+    fun testGamePlayersAttributeType() {
+        assertTrue(testGame.players is Array<Player>)
+    }
+
+    @Test
     fun testRaffleTeamForPlayers() {
         val playerOneName: String = "foo"
         val playerTwoName: String = "bar"
