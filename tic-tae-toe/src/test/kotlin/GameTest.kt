@@ -16,7 +16,7 @@ internal class GameTest {
 
     @Test
     fun testGamePlayersAttributeType() {
-        assertTrue(testGame.players is Array<Player>)
+        assertTrue(testGame.players is List<Player>)
     }
 
     @Test
@@ -24,7 +24,14 @@ internal class GameTest {
         val playerOneName: String = "foo"
         val playerTwoName: String = "bar"
         val teamRaffled = testGame.raffleTeamForPlayers(playerOneName, playerTwoName)
-        assertEquals(teamRaffled["X"], playerOneName)
-        assertEquals(teamRaffled["O"], playerTwoName)
+        assertEquals(teamRaffled[playerOneName], "X")
+        assertEquals(teamRaffled[playerTwoName], "O")
+    }
+
+    @Test
+    fun testCreatePlayers() {
+        val players = testGame.createPlayers("foo", "bar")
+        assertEquals(players[0]?.name ?: null, "foo")
+        assertEquals(players[1]?.name ?: null, "bar")
     }
 }

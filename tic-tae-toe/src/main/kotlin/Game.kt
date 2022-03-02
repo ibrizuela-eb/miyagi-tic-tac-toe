@@ -1,11 +1,15 @@
 class Game() {
     var board: String = "         "
-    val players: Array<Player> = Array(2) {
-        Player("foo", "X");
-        Player("bar", "O")
-    }
+    var players = List<Player>()
 
     fun raffleTeamForPlayers(playerOneName: String, playerTwoName: String): Map<String, String> {
-        return mapOf("X" to playerOneName, "O" to playerTwoName)
+        return mapOf(playerOneName to "X", playerTwoName to "O")
+    }
+
+    fun createPlayers(playerOneName: String, playerTwoName: String): List<Player?> {
+        val teams = this.raffleTeamForPlayers(playerOneName, playerTwoName)
+        val playerOne: Player? = teams[playerOneName]?.let { Player(playerOneName, it) }
+        val playerTwo: Player? = teams[playerTwoName]?.let { Player(playerTwoName, it) }
+        return listOf(playerOne, playerTwo)
     }
 }
