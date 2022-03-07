@@ -1,1 +1,4 @@
+root=true
+[*.{kt,kts}]
+indent_style = tab
 disabled_rules=no-wildcard-imports,experimental:annotation,my-custom-ruleset:my-custom-rule
