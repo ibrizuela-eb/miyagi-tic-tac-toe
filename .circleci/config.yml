@@ -38,14 +38,6 @@ jobs:
             export JACOCO_SOURCE_PATH="./src/main/kotlin"
             ./cc-test-reporter format-coverage -t jacoco build/reports/jacoco/test/jacocoTestReport.xml
             ./cc-test-reporter upload-coverage
-      - save_cache:
-          paths:
-            - ~/.gradle/wrapper
-          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-      - save_cache:
-          paths:
-            - ~/.gradle/caches
-          key: v1-gradle-cache-{{ checksum "build.gradle.kts" }}
       - store_test_results:
           path: build/test-results/test
       - run:
