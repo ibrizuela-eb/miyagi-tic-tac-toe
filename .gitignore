@@ -1,7 +1,8 @@
 build
 .idea
 .gradle
-*gradle*
+*gradle.kts
+*gradlew*
 coverage
 .DS_Store
 
