@@ -18,9 +18,9 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-jacoco {
-    toolVersion = "0.8.7"
-}
+// jacoco {
+//     toolVersion = "0.8.7"
+// }
 
 tasks.test {
     useJUnitPlatform()
