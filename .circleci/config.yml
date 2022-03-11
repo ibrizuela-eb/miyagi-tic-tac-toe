@@ -32,12 +32,12 @@ jobs:
           command: |
             ./cc-test-reporter before-build
             ./gradlew test
-      - run:
-          name: Upload coverage to Code Climate
-          command: |
-            export JACOCO_SOURCE_PATH="./src/main/kotlin"
-            ./cc-test-reporter format-coverage -t jacoco build/reports/jacoco/test/jacocoTestReport.xml
-            ./cc-test-reporter upload-coverage
+      # - run:
+      #     name: Upload coverage to Code Climate
+      #     command: |
+      #       export JACOCO_SOURCE_PATH="./src/main/kotlin"
+      #       ./cc-test-reporter format-coverage -t jacoco build/reports/jacoco/test/jacocoTestReport.xml
+      #       ./cc-test-reporter upload-coverage
       - store_test_results:
           path: build/test-results/test
       - run:

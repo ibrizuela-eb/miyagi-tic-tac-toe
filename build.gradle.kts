@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.5.10"
     application
 //    id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
-    jacoco
+    // jacoco
 }
 
 group = "me.ibrizuela"
@@ -34,9 +34,9 @@ application {
     mainClass.set("MainKt")
 }
 
-tasks.jacocoTestReport {
-    dependsOn(tasks.test)
-    reports {
-        xml.isEnabled = true
-    }
-}
+// tasks.jacocoTestReport {
+//     dependsOn(tasks.test)
+//     reports {
+//         xml.isEnabled = true
+//     }
+// }
