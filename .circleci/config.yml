@@ -17,10 +17,10 @@ jobs:
           key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
       - restore_cache:
           key: v1-gradle-cache-{{ checksum "build.gradle.kts" }}
-      - run:
-          name: Check ktlint rules
-          command: |
-            ./gradlew ktlintCheck
+      # - run:
+      #     name: Check ktlint rules
+      #     command: |
+      #       ./gradlew ktlintCheck
       - run:
           name: Setup Code Climate test-reporter
           command: |
